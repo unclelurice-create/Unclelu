@@ -1,0 +1,22 @@
+name: Supabase deploy
+on:
+  push:
+    branches: [main]
+    paths: ['supabase/**']
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+      PROJECT: rjsrnjgivjsxqjlkgjqp
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: supabase link --project-ref "$PROJECT" --password "$SUPABASE_DB_PASSWORD"
+      - run: supabase migration repair --status applied 20261111000000 20261112000001 --password "$SUPABASE_DB_PASSWORD" || true
+      - run: supabase db push --password "$SUPABASE_DB_PASSWORD"
+      - run: supabase functions deploy invite_staff set_staff_password delete_user --project-ref "$PROJECT"
