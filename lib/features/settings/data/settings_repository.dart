@@ -35,12 +35,28 @@ class SettingsRepository {
     return rows.map(MenuItem.fromJson).toList();
   }
 
-  Future<void> saveMenu({String? id, required String name, required int price, required MenuCategory category, bool isAlacarte = false}) async {
-    final data = {'name': name.trim(), 'price': price, 'category': category.name, 'is_alacarte': category == MenuCategory.menu && isAlacarte};
+  /// Simpan menu. [photo] = foto baru (sudah diperkecil); [removePhoto] menghapus foto.
+  Future<void> saveMenu({String? id, required String name, required int price, required MenuCategory category, bool isAlacarte = false, String? description, Uint8List? photo, bool removePhoto = false}) async {
+    final data = <String, dynamic>{
+      'name': name.trim(), 'price': price, 'category': category.name,
+      'is_alacarte': category == MenuCategory.menu && isAlacarte,
+      'description': (description ?? '').trim().isEmpty ? null : description!.trim(),
+      if (removePhoto) 'photo_url': null,
+    };
+    final String menuId;
     if (id == null) {
-      await _db.from('menu_items').insert(data);
+      final row = await _db.from('menu_items').insert(data).select('id, store_id').single();
+      menuId = row['id'] as String;
     } else {
       await _db.from('menu_items').update(data).eq('id', id);
+      menuId = id;
+    }
+    if (photo != null) {
+      final row = await _db.from('menu_items').select('store_id').eq('id', menuId).single();
+      final path = '${row['store_id']}/menu/$menuId.jpg';
+      await _db.storage.from('store-photos').uploadBinary(path, photo, fileOptions: const FileOptions(upsert: true, contentType: 'image/jpeg'));
+      final url = '${_db.storage.from('store-photos').getPublicUrl(path)}?v=${DateTime.now().millisecondsSinceEpoch}';
+      await _db.from('menu_items').update({'photo_url': url}).eq('id', menuId);
     }
   }
 

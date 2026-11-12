@@ -9,7 +9,7 @@ const ORIGIN_ADDRESSES = [
 ];
 const TARIF_PER_KM = 2500;
 const ONGKIR_MIN = 12500;
-const MAX_KM = 10;
+const MAX_KM = 20;
 const FAKTOR_GARIS_LURUS = 1.35; // dipakai hanya jika server rute OSRM sedang mati
 const UA = { "User-Agent": "UncleLuOngkir/1.0 (website pre-order Uncle Lu)" };
 

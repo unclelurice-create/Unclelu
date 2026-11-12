@@ -46,7 +46,9 @@ class MenuItem {
   final int price;
   final MenuCategory category;
   final bool isAlacarte;
-  const MenuItem({required this.id, required this.name, required this.price, this.category = MenuCategory.menu, this.isAlacarte = false});
+  final String? description;
+  final String? photoUrl;
+  const MenuItem({required this.id, required this.name, required this.price, this.category = MenuCategory.menu, this.isAlacarte = false, this.description, this.photoUrl});
   bool get isAdditional => category == MenuCategory.additional;
   factory MenuItem.fromJson(Map<String, dynamic> j) => MenuItem(
         id: j['id'] as String,
@@ -54,6 +56,8 @@ class MenuItem {
         price: (j['price'] as num).toInt(),
         category: j['category'] == 'additional' ? MenuCategory.additional : MenuCategory.menu,
         isAlacarte: (j['is_alacarte'] as bool?) ?? false,
+        description: j['description'] as String?,
+        photoUrl: j['photo_url'] as String?,
       );
 }
 

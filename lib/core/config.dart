@@ -6,6 +6,7 @@ class AppConfig {
   static const logoAsset = 'assets/brand/app_logo.png';
   static const defaultBasePortions = 25;
   static const photoMaxSize = 480.0;
+  static const menuPhotoMaxSize = 800.0;
   static const minPasswordLength = 6;
 
   static bool get hasSupabase => supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty;
