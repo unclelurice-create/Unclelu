@@ -1,0 +1,22 @@
+name: Flutter check
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Siapkan proyek
+        run: |
+          flutter create . --org id.satupintu --platforms=android,ios --project-name satu_pintu
+          rm -f test/widget_test.dart
+          flutter pub get
+          flutter gen-l10n
+      - run: flutter analyze
+      - run: flutter test
