@@ -1,0 +1,30 @@
+name: Build APK
+on:
+  workflow_dispatch:
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Siapkan proyek
+        run: |
+          flutter create . --org id.satupintu --platforms=android --project-name satu_pintu
+          rm -f test/widget_test.dart
+          flutter pub get
+          flutter gen-l10n
+      - name: Build APK
+        run: |
+          flutter build apk --release \
+            --dart-define=SUPABASE_URL=https://rjsrnjgivjsxqjlkgjqp.supabase.co \
+            --dart-define=SUPABASE_ANON_KEY=sb_publishable_18vDmtyNXMiFFcie1DOSxw_YoBBUgTg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: satu
