@@ -22,6 +22,7 @@ jobs:
           flutter gen-l10n
           if [ -d android_icons/res ]; then cp -r android_icons/res/* android/app/src/main/res/; fi
           sed -i 's/android:label="[^"]*"/android:label="Satu Pintu"/' android/app/src/main/AndroidManifest.xml
+          sed -i 's|<application|<uses-permission android:name="android.permission.INTERNET"/>\n    <application|' android/app/src/main/AndroidManifest.xml
           f=android/build.gradle.kts; [ -f "$f" ] || f=android/build.gradle
           printf '\nsubprojects {\n    tasks.matching { it.name.contains("lint") }.configureEach { enabled = false }\n}\n' >> "$f"
       - name: Build APK
