@@ -18,5 +18,11 @@ jobs:
           rm -f test/widget_test.dart
           flutter pub get
           flutter gen-l10n
-      - run: flutter analyze --no-fatal-infos
+            - name: Analyze
+        run: |
+          flutter analyze --no-fatal-infos > analyze.txt 2>&1 || status=$?
+          grep -E "error •|warning •" analyze.txt > issues.txt || true
+          { echo '```'; cat issues.txt; tail -n 1 analyze.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          cat issues.txt
+          exit ${status:-0}
       - run: flutter test
