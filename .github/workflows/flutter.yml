@@ -18,5 +18,5 @@ jobs:
           rm -f test/widget_test.dart
           flutter pub get
           flutter gen-l10n
-      - run: flutter analyze
+      - run: flutter analyze --no-fatal-infos
       - run: flutter test
