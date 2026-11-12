@@ -1,0 +1,517 @@
+{
+ "@@locale": "id",
+ "appTitle": "Satu Pintu",
+ "introTitle": "Atur Tokomu untuk Input & Order dengan satu pintu",
+ "next": "Selanjutnya",
+ "back": "Kembali",
+ "welcome": "Selamat datang",
+ "loginSubtitle": "Masuk untuk mengelola order dan bahan belanja.",
+ "emailOrUsername": "Email atau username",
+ "password": "Password",
+ "showPassword": "Lihat password",
+ "hidePassword": "Sembunyikan password",
+ "rememberMe": "Ingat saya",
+ "forgotPassword": "Lupa password?",
+ "signIn": "Masuk",
+ "noAccount": "Belum punya akun?",
+ "signUpHere": "Daftar di sini",
+ "createAccount": "Daftar akun",
+ "createAccountBtn": "Buat akun",
+ "storeName": "Nama toko",
+ "storeEmail": "Email toko",
+ "phone": "Nomor HP",
+ "forgotTitle": "Lupa password",
+ "forgotBody": "Masukkan email yang terdaftar. Kami kirim tautan untuk mengatur ulang password.",
+ "email": "Email",
+ "sendLink": "Kirim tautan",
+ "linkSent": "Tautan dikirim ke email Anda",
+ "wrongLogin": "Email atau password salah",
+ "invalidStoreForm": "Isi nama toko dan email toko yang valid",
+ "passwordMin": "Password minimal 6 karakter",
+ "emailTaken": "Email sudah terdaftar",
+ "accountCreated": "Akun dibuat sebagai Owner/Admin. Silakan masuk.",
+ "genericError": "Terjadi kesalahan. Coba lagi.",
+ "noSupabase": "Kredensial Supabase belum diisi. Jalankan dengan --dart-define.",
+ "navDashboard": "Dashboard",
+ "navOrders": "Order",
+ "navPurchases": "Belanja",
+ "navReports": "Laporan",
+ "navAccount": "Akun",
+ "hello": "Halo,",
+ "helloStore": "{name}!",
+ "@helloStore": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "totalSales": "Total penjualan",
+ "vsPrevious": "vs periode sebelumnya",
+ "totalOrders": "Total order",
+ "ingredientPurchases": "Pembelian bahan",
+ "netProfit": "Laba bersih",
+ "marginPct": "Margin {pct}%",
+ "@marginPct": {
+  "placeholders": {
+   "pct": {
+    "type": "String"
+   }
+  }
+ },
+ "unpaid": "Belum dibayar",
+ "nOrders": "{n} order",
+ "@nOrders": {
+  "placeholders": {
+   "n": {
+    "type": "String"
+   }
+  }
+ },
+ "salesByMenu": "Penjualan per menu",
+ "recentOrders": "Order terbaru",
+ "seeAll": "Lihat semua",
+ "noOrdersYet": "Belum ada order.",
+ "additional": "Additional",
+ "all": "Semua",
+ "statusDiproses": "Diproses",
+ "statusSelesai": "Selesai",
+ "statusBatal": "Batal",
+ "searchOrders": "Cari nomor order atau pelanggan",
+ "noMatchingOrders": "Tidak ada order yang cocok. Coba kata kunci lain.",
+ "noOrdersStart": "Belum ada order. Ketuk Buat order baru untuk memulai.",
+ "newOrder": "Buat order baru",
+ "editOrder": "Edit order",
+ "orderDate": "Tanggal order",
+ "customer": "Pelanggan",
+ "customerHint": "Ketik nama pelanggan",
+ "walkInCustomer": "Pelanggan umum",
+ "products": "Daftar produk",
+ "manageMenu": "Kelola menu",
+ "add": "Tambah",
+ "payment": "Pembayaran",
+ "paid": "Lunas",
+ "notPaid": "Belum bayar",
+ "paidWith": "Lunas · {method}",
+ "@paidWith": {
+  "placeholders": {
+   "method": {
+    "type": "String"
+   }
+  }
+ },
+ "cash": "Tunai",
+ "transfer": "Transfer",
+ "qris": "QRIS",
+ "noteOptional": "Catatan (opsional)",
+ "noteHint": "Tulis catatan…",
+ "nItems": "{n} item",
+ "@nItems": {
+  "placeholders": {
+   "n": {
+    "type": "String"
+   }
+  }
+ },
+ "saveOrder": "Simpan order",
+ "saveChanges": "Simpan perubahan",
+ "addAtLeastOne": "Tambahkan minimal satu produk",
+ "orderSaved": "Order {code} disimpan",
+ "@orderSaved": {
+  "placeholders": {
+   "code": {
+    "type": "String"
+   }
+  }
+ },
+ "orderUpdated": "Order {code} diperbarui",
+ "@orderUpdated": {
+  "placeholders": {
+   "code": {
+    "type": "String"
+   }
+  }
+ },
+ "inBatch": "Masuk {batch} · {status}",
+ "@inBatch": {
+  "placeholders": {
+   "batch": {
+    "type": "String"
+   },
+   "status": {
+    "type": "String"
+   }
+  }
+ },
+ "closedOnWebsite": " · Tutup di website",
+ "noBatchForDate": "Tanggal ini belum masuk batch mana pun.",
+ "batchClosedError": "Batch sudah ditutup. Buka kembali di Kelola batch.",
+ "aLaCarte": "À la carte",
+ "chooseFlavor": "Pilih rasa",
+ "chooseFlavorFirst": "Pilih rasa dulu",
+ "nPortions": "{n} porsi",
+ "@nPortions": {
+  "placeholders": {
+   "n": {
+    "type": "String"
+   }
+  }
+ },
+ "noFlavors": "Belum ada menu untuk dipilih rasanya.",
+ "noMenusAdd": "Belum ada menu. Ketuk Kelola menu untuk menambah.",
+ "updateStatus": "Ubah status order",
+ "saveStatus": "Simpan status",
+ "statusUpdated": "Status diperbarui",
+ "webOrders": "Order website",
+ "makeOrder": "Jadikan order",
+ "noWebOrders": "Belum ada order website baru.",
+ "menuNotFound": "Menu \"{name}\" tidak ditemukan, cek isinya sebelum menyimpan.",
+ "@menuNotFound": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "pickup": "Pengambilan",
+ "purchasesTitle": "Bahan belanja",
+ "tabAdd": "Tambah",
+ "tabList": "Daftar",
+ "tabSummary": "Ringkasan",
+ "tabCosts": "Biaya",
+ "addIngredient": "Tambah bahan",
+ "ingredientName": "Nama bahan",
+ "quantity": "Jumlah",
+ "pricePer": "Harga per {unit}",
+ "@pricePer": {
+  "placeholders": {
+   "unit": {
+    "type": "String"
+   }
+  }
+ },
+ "estimatedTotal": "Perkiraan total",
+ "ingredientList": "Daftar bahan",
+ "totalPurchases": "Total belanja",
+ "purchasesPerBatch": "Total belanja per batch",
+ "noPurchases": "Belum ada bahan belanja.",
+ "fillIngredient": "Isi nama, jumlah, dan harga per {unit}",
+ "@fillIngredient": {
+  "placeholders": {
+   "unit": {
+    "type": "String"
+   }
+  }
+ },
+ "packContent": "Isi per pack",
+ "packContentHint": "Misal: 25",
+ "fillPackContent": "Isi jumlah isi per pack",
+ "perContent": "= {price} per {unit}",
+ "@perContent": {
+  "placeholders": {
+   "price": {
+    "type": "String"
+   },
+   "unit": {
+    "type": "String"
+   }
+  }
+ },
+ "containsPack": "(isi {n} {unit})",
+ "@containsPack": {
+  "placeholders": {
+   "n": {
+    "type": "String"
+   },
+   "unit": {
+    "type": "String"
+   }
+  }
+ },
+ "added": "{name} ditambahkan",
+ "@added": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "deleted": "{name} dihapus",
+ "@deleted": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "saved": "{name} disimpan",
+ "@saved": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "allBatches": "Semua batch",
+ "chooseBatchFirst": "Pilih batch atau buat batch dulu di Kelola batch",
+ "addCost": "Tambah biaya",
+ "costName": "Nama biaya (misal: Gas elpiji)",
+ "costAmount": "Jumlah biaya",
+ "costList": "Daftar biaya",
+ "totalCosts": "Total biaya",
+ "noCosts": "Belum ada biaya.",
+ "fillCost": "Isi nama dan jumlah biaya",
+ "catKemasan": "Kemasan",
+ "catGasListrik": "Gas & listrik",
+ "catGaji": "Gaji",
+ "catSewa": "Sewa",
+ "catLainnya": "Lainnya",
+ "reportsTitle": "Laporan",
+ "sales": "Penjualan",
+ "totalPurchasesShort": "Total pembelian",
+ "totalIngredients": "Total bahan",
+ "salesTrend": "Tren penjualan",
+ "purchaseTrend": "Tren pembelian bahan",
+ "detailsPerBatch": "Rincian per batch",
+ "comparisonPerBatch": "Perbandingan per batch",
+ "operatingCosts": "Biaya operasional",
+ "profitPerBatch": "Laba per batch",
+ "exportReport": "Ekspor laporan",
+ "export": "Ekspor",
+ "exportHint": "Pilih jenis dan format file.",
+ "reportExported": "Laporan {name} diekspor",
+ "@reportExported": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "noData": "Belum ada data pada periode ini.",
+ "selectPeriod": "Pilih periode",
+ "selectOrderDate": "Pilih tanggal order",
+ "selectStart": "Pilih tanggal awal",
+ "selectEnd": "Pilih tanggal akhir",
+ "apply": "Terapkan",
+ "prevMonth": "Bulan sebelumnya",
+ "nextMonth": "Bulan berikutnya",
+ "close": "Tutup",
+ "settings": "Pengaturan",
+ "accountProfile": "Profil akun",
+ "storeProfile": "Profil toko",
+ "darkMode": "Mode gelap",
+ "accentColor": "Warna aksen",
+ "language": "Bahasa",
+ "signOut": "Keluar",
+ "changePhoto": "Ganti foto",
+ "removePhoto": "Hapus foto",
+ "fromGallery": "Pilih dari galeri",
+ "fromCamera": "Ambil foto",
+ "storeNameInfo": "Nama dan foto toko tampil di Dashboard dan Pengaturan.",
+ "onlyOwnerStore": "Hanya Owner/Admin yang dapat mengubah nama dan foto toko.",
+ "storeNameEmpty": "Nama toko tidak boleh kosong",
+ "storeSaved": "Profil toko disimpan",
+ "roleOwner": "Owner/Admin",
+ "roleStaff": "Staff",
+ "accentRed": "Merah",
+ "accentOrange": "Oranye",
+ "accentMagenta": "Magenta",
+ "accentGreen": "Hijau",
+ "accentBlue": "Biru",
+ "fullName": "Nama",
+ "menuSection": "Menu",
+ "newMenu": "+ Menu baru",
+ "newAdditional": "+ Additional baru",
+ "noMenus": "Belum ada menu.",
+ "noAdditionals": "Belum ada additional.",
+ "save": "Simpan",
+ "delete": "Hapus",
+ "cancel": "Batalkan",
+ "name": "Nama",
+ "price": "Harga",
+ "menuName": "Nama menu",
+ "additionalName": "Nama additional",
+ "editMenu": "Ubah menu",
+ "addMenu": "Tambah menu",
+ "editAdditional": "Ubah additional",
+ "addAdditional": "Tambah additional",
+ "fillNamePrice": "Isi nama dan harga",
+ "alaCarteCheck": "Menu à la carte (pelanggan memilih rasa dari menu lain)",
+ "deleteQ": "Hapus {name}?",
+ "@deleteQ": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "deleteMenuInfo": "Item ini akan dihapus dari daftar dan dari order yang sedang dibuat.",
+ "costHint": "Modal {cost}/porsi",
+ "@costHint": {
+  "placeholders": {
+   "cost": {
+    "type": "String"
+   }
+  }
+ },
+ "manageBatches": "Kelola batch",
+ "newBatchBtn": "+ Batch baru",
+ "batchInfo": "Batch adalah satu periode pre-order. Order masuk ke batch sesuai tanggalnya, dan batch yang ditutup tidak menerima order baru.",
+ "open": "Buka",
+ "closed": "Ditutup",
+ "editBatch": "Ubah batch",
+ "newBatch": "Batch baru",
+ "batchName": "Nama batch",
+ "period": "Periode",
+ "status": "Status",
+ "deleteBatch": "Hapus batch",
+ "batchHasOrdersInfo": "Batch yang sudah memiliki order tidak bisa dihapus.",
+ "fillBatchName": "Isi nama batch",
+ "endBeforeStart": "Tanggal akhir harus setelah tanggal awal",
+ "overlapsWith": "Tanggal bertabrakan dengan {name}",
+ "@overlapsWith": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "batchHasOrders": "Batch ini masih memiliki order",
+ "batchOrders": "{range} · {n} order",
+ "@batchOrders": {
+  "placeholders": {
+   "range": {
+    "type": "String"
+   },
+   "n": {
+    "type": "String"
+   }
+  }
+ },
+ "noBatches": "Belum ada batch. Ketuk + Batch baru.",
+ "manageUsers": "Kelola pengguna",
+ "usersInfo": "Owner/Admin mengatur semuanya. Staff hanya mengakses Dashboard, Order, Belanja, dan Akun.",
+ "newStaffBtn": "+ Staff baru",
+ "you": "(Anda)",
+ "addStaff": "Tambah staff",
+ "staffName": "Nama staff",
+ "staffEmail": "Email staff",
+ "staffPassword": "Password staff",
+ "minChars": "Minimal 6 karakter",
+ "random": "Acak",
+ "staffLoginInfo": "Staff login dengan email dan password ini, dan hanya mengakses Dashboard, Order, Belanja, dan Akun.",
+ "staffLoginShort": "Staff login dengan email dan password ini.",
+ "invalidNameEmail": "Isi nama dan email yang valid",
+ "ownerAccess": "Akses penuh: semua menu dan pengaturan",
+ "staffAccess": "Dashboard, Order, Belanja, dan Akun",
+ "setStaffPassword": "Atur password staff",
+ "leaveEmpty": "Kosongkan jika tidak diubah",
+ "deleteUser": "Hapus pengguna",
+ "deleteUserInfo": "Pengguna ini tidak bisa masuk lagi ke aplikasi.",
+ "cantChangeOwnRole": "Anda tidak bisa mengubah role sendiri",
+ "cantDeleteSelf": "Anda tidak bisa menghapus akun sendiri",
+ "needOneOwner": "Harus ada minimal satu Owner/Admin",
+ "roleUpdated": "Role {name} diperbarui",
+ "@roleUpdated": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "updated": "{name} diperbarui",
+ "@updated": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "ingredientCost": "Modal bahan",
+ "hppInfo": "Isi bahan untuk satu resep (default 25 porsi) per menu dan additional. Modal per 1 porsi dihitung otomatis. Modal ini hanya patokan untuk melihat keuntungan per menu dan tidak memengaruhi Dashboard maupun Laporan.",
+ "notFilled": "Belum diisi",
+ "hppRow": "Modal {cost}/porsi · Margin {pct}%",
+ "@hppRow": {
+  "placeholders": {
+   "cost": {
+    "type": "String"
+   },
+   "pct": {
+    "type": "String"
+   }
+  }
+ },
+ "costForN": "Modal untuk {n} porsi",
+ "@costForN": {
+  "placeholders": {
+   "n": {
+    "type": "String"
+   }
+  }
+ },
+ "perPortion": "Per 1 porsi {price}",
+ "@perPortion": {
+  "placeholders": {
+   "price": {
+    "type": "String"
+   }
+  }
+ },
+ "sellPrice": "Harga jual {price}",
+ "@sellPrice": {
+  "placeholders": {
+   "price": {
+    "type": "String"
+   }
+  }
+ },
+ "profitPerPortion": "Laba/porsi {price}",
+ "@profitPerPortion": {
+  "placeholders": {
+   "price": {
+    "type": "String"
+   }
+  }
+ },
+ "recipePortions": "Resep untuk berapa porsi?",
+ "portionConversion": "Konversi porsi",
+ "costNPortions": "Modal {n} porsi",
+ "@costNPortions": {
+  "placeholders": {
+   "n": {
+    "type": "String"
+   }
+  }
+ },
+ "recipeIngredients": "Bahan resep",
+ "noIngredients": "Belum ada bahan.",
+ "openClosedDays": "Hari buka/tutup",
+ "daysInfo": "Atur hari yang bisa dipesan di website. Semua hari default buka, dan perubahan langsung tampil di website.",
+ "weeklyClosed": "Tutup rutin tiap pekan",
+ "legendSpecial": "Tutup khusus",
+ "legendWeekly": "Tutup rutin",
+ "today": "Hari ini",
+ "tapDateHint": "Ketuk tanggal untuk membuka atau menutupnya.",
+ "specialClosedDates": "Tanggal tutup khusus",
+ "noNote": "Tanpa catatan",
+ "noSpecialClosed": "Belum ada tanggal tutup khusus.",
+ "closedLabel": "Tutup",
+ "closeNoteHint": "Misal: Libur nasional",
+ "dayClosed": "{date} ditutup",
+ "@dayClosed": {
+  "placeholders": {
+   "date": {
+    "type": "String"
+   }
+  }
+ },
+ "dayOpened": "{date} dibuka",
+ "@dayOpened": {
+  "placeholders": {
+   "date": {
+    "type": "String"
+   }
+  }
+ },
+ "onlyWebsiteStore": "Hari buka/tutup hanya untuk toko yang terhubung ke website."
+}
