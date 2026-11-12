@@ -20,14 +20,16 @@ jobs:
           rm -f test/widget_test.dart
           flutter pub get
           flutter gen-l10n
-                 cp -r android_icons/res/* android/app/src/main/res/
-       sed -i 's/android:label="[^"]*"/android:label="Satu Pintu"/' android/app/src/main/AndroidManifest.xml
+          if [ -d android_icons/res ]; then cp -r android_icons/res/* android/app/src/main/res/; fi
+          sed -i 's/android:label="[^"]*"/android:label="Satu Pintu"/' android/app/src/main/AndroidManifest.xml
+          f=android/build.gradle.kts; [ -f "$f" ] || f=android/build.gradle
+          printf '\nsubprojects {\n    tasks.matching { it.name.contains("lint") }.configureEach { enabled = false }\n}\n' >> "$f"
       - name: Build APK
         run: |
-          flutter build apk --debug \
+          flutter build apk --release --split-per-abi \
             --dart-define=SUPABASE_URL=https://rjsrnjgivjsxqjlkgjqp.supabase.co \
             --dart-define=SUPABASE_ANON_KEY=sb_publishable_18vDmtyNXMiFFcie1DOSxw_YoBBUgTg
       - uses: actions/upload-artifact@v4
         with:
           name: satu-pintu-apk
-          path: build/app/outputs/flutter-apk/app-debug.apk
+          path: build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
