@@ -17,6 +17,5 @@ jobs:
         with:
           version: latest
       - run: supabase link --project-ref "$PROJECT" --password "$SUPABASE_DB_PASSWORD"
-      - run: supabase migration repair --status applied 20261111000000 20261112000001 --password "$SUPABASE_DB_PASSWORD" || true
-      - run: supabase db push --password "$SUPABASE_DB_PASSWORD"
+      - run: supabase db push --linked --password "$SUPABASE_DB_PASSWORD"
       - run: supabase functions deploy invite_staff set_staff_password delete_user --project-ref "$PROJECT"
