@@ -1,0 +1,22 @@
+name: Ekstrak zip
+on:
+  push:
+    paths: ['*.zip']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ekstrak dan commit
+        run: |
+          f=$(ls *.zip | head -n1)
+          unzip -o "$f" -d .
+          git rm -q --cached "$f"; rm -f "$f"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Ekstrak $f"
+          git push
