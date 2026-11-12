@@ -20,13 +20,12 @@ jobs:
           rm -f test/widget_test.dart
           flutter pub get
           flutter gen-l10n
-                    f=android/app/build.gradle.kts; [ -f "$f" ] || f=android/app/build.gradle
-          printf '\nandroid {\n    lint {\n        checkReleaseBuilds = false\n        abortOnError = false\n    }\n}\n' >> "$f"
       - name: Build APK
         run: |
-          flutter build apk --release \
+          flutter build apk --debug \
             --dart-define=SUPABASE_URL=https://rjsrnjgivjsxqjlkgjqp.supabase.co \
             --dart-define=SUPABASE_ANON_KEY=sb_publishable_18vDmtyNXMiFFcie1DOSxw_YoBBUgTg
       - uses: actions/upload-artifact@v4
         with:
-          name: satu
+          name: satu-pintu-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
