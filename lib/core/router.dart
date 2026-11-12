@@ -20,7 +20,7 @@ import 'providers.dart';
 import 'widgets/shell.dart';
 
 /// Rute yang tidak boleh dibuka Staff
-const ownerOnly = ['/reports', '/settings/menus', '/settings/batches', '/settings/users', '/settings/hpp', '/settings/days', '/orders/web'];
+const ownerOnly = ['/reports', '/settings/menus', '/settings/batches', '/settings/users', '/settings/hpp', '/settings/days'];
 const _public = ['/intro', '/login', '/register', '/forgot'];
 
 class _RouterRefresh extends ChangeNotifier {

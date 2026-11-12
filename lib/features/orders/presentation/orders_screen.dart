@@ -22,12 +22,13 @@ class _OrdersScreenState extends ConsumerState<OrdersScreen> {
   @override
   Widget build(BuildContext context) {
     final l = context.l;
-    final owner = ref.watch(isOwnerProvider);
-    final webCount = owner && (ref.watch(storeProvider).valueOrNull?.isWebsiteStore ?? false) ? (ref.watch(webOrdersProvider).valueOrNull?.length ?? 0) : 0;
+    // Owner & Staff toko website sama-sama menerima order website
+    final web = ref.watch(storeProvider).valueOrNull?.isWebsiteStore ?? false;
+    final webCount = web ? (ref.watch(webOrdersProvider).valueOrNull?.length ?? 0) : 0;
     return Column(children: [
       TopBar(
         title: l.navOrders,
-        trailing: owner && (ref.watch(storeProvider).valueOrNull?.isWebsiteStore ?? false)
+        trailing: web
             ? Badge(
                 isLabelVisible: webCount > 0,
                 label: Text('$webCount'),
