@@ -29,11 +29,9 @@ class Store {
   final String name;
   final String? photoUrl;
   final bool isWebsiteStore;
-  final DateTime? createdAt;
   /// Tanggal toko mulai tercatat (awal riwayat).
   final DateTime? createdAt;
   const Store({required this.id, required this.name, this.photoUrl, this.isWebsiteStore = false, this.createdAt});
-        createdAt: j['created_at'] == null ? null : DateTime.parse(j['created_at'] as String).toLocal(),
   factory Store.fromJson(Map<String, dynamic> j) => Store(
         id: j['id'] as String,
         name: (j['name'] as String?) ?? '',
