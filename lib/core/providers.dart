@@ -89,7 +89,7 @@ class PeriodNotifier extends Notifier<(DateTime, DateTime)> {
 }
 
 final periodProvider = NotifierProvider<PeriodNotifier, (DateTime, DateTime)>(PeriodNotifier.new);
-
+ 
 /// null = Semua batch
 final batchFilterProvider = StateProvider<String?>((_) => null);
 
