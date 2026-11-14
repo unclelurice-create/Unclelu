@@ -76,20 +76,25 @@ final storeProvider = FutureProvider<Store?>((ref) async {
 });
 
 // ------------------------------------------------------------ periode & batch filter
-/// Periode default = bulan berjalan (dari kalender perangkat).
+/// Rentang satu bulan kalender (dari kalender perangkat).
 (DateTime, DateTime) currentMonth([DateTime? now]) {
   final n = now ?? DateTime.now();
   return (DateTime(n.year, n.month, 1), DateTime(n.year, n.month + 1, 0));
 }
 
+/// Awal riwayat usaha (Batch 1).
+final kHistoryStart = DateTime(2026, 9, 28);
+
 class PeriodNotifier extends Notifier<(DateTime, DateTime)> {
+  /// Default: seluruh riwayat sejak Batch 1 s.d. akhir bulan ini,
+  /// supaya angka dashboard sama dengan rekap di Google Sheet.
   @override
-  (DateTime, DateTime) build() => currentMonth();
+  (DateTime, DateTime) build() => (kHistoryStart, currentMonth().$2);
   void set(DateTime s, DateTime e) => state = (Fmt.dateOnly(s), Fmt.dateOnly(e));
 }
 
 final periodProvider = NotifierProvider<PeriodNotifier, (DateTime, DateTime)>(PeriodNotifier.new);
- 
+
 /// null = Semua batch
 final batchFilterProvider = StateProvider<String?>((_) => null);
 
