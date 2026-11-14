@@ -82,14 +82,17 @@ final storeProvider = FutureProvider<Store?>((ref) async {
   return (DateTime(n.year, n.month, 1), DateTime(n.year, n.month + 1, 0));
 }
 
-/// Awal riwayat usaha (Batch 1).
-final kHistoryStart = DateTime(2026, 9, 28);
-
 class PeriodNotifier extends Notifier<(DateTime, DateTime)> {
-  /// Default: seluruh riwayat sejak Batch 1 s.d. akhir bulan ini,
-  /// supaya angka dashboard sama dengan rekap di Google Sheet.
+  /// Default: sejak toko mulai tercatat (tanggal daftar / awal riwayat)
+  /// s.d. akhir bulan ini. Toko baru mulai dari hari daftar.
   @override
-  (DateTime, DateTime) build() => (kHistoryStart, currentMonth().$2);
+  (DateTime, DateTime) build() {
+    final end = currentMonth().$2;
+    final created = ref.watch(storeProvider).valueOrNull?.createdAt;
+    final start = created == null ? currentMonth().$1 : Fmt.dateOnly(created);
+    return (start.isAfter(end) ? currentMonth().$1 : start, end);
+  }
+
   void set(DateTime s, DateTime e) => state = (Fmt.dateOnly(s), Fmt.dateOnly(e));
 }
 
